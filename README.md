@@ -27,3 +27,8 @@ http://localhost:8083/api-email-marketing/swagger-ui.html
 
 Open the browser and paste this URL: 
 http://localhost:8084/api-email-marketing/swagger-ui.html
+
+#### API SMTP Config
+
+Open the browser and paste this URL: 
+http://localhost:8085/api-email-marketing/swagger-ui.html
