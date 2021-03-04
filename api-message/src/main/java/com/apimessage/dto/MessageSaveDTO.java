@@ -1,9 +1,8 @@
 package com.apimessage.dto;
 
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Null;
 
 public class MessageSaveDTO {
     
@@ -15,10 +14,8 @@ public class MessageSaveDTO {
     @NotBlank(message = "Message can't be blank.")
     private String message;
 
-    @Null
-    @NotEmpty
-    @NotBlank
-    @NotNull(message = "ID user can't be null.")
+    @NotNull(message = "ID User can't be null.")
+    @Min(value = 1, message = "ID User can't be null.")
     private Integer idUser;
 
     public String getTitle() {

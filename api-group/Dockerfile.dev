@@ -1,0 +1,7 @@
+FROM maven:3.6.3-jdk-11
+
+COPY ./ /api-group
+
+WORKDIR /api-group
+
+CMD ["mvn", "spring-boot:run"]

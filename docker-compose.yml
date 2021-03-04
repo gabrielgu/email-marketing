@@ -1,0 +1,41 @@
+version: "3.3"
+
+services:
+
+  api-user:
+    build:
+      context: ./api-user
+      dockerfile: Dockerfile.dev
+    ports:
+      - "8081:8081"
+    network_mode: "host"
+
+  api-contact:
+    build:
+      context: ./api-contact
+      dockerfile: Dockerfile.dev
+    ports:
+      - "8082:8082"
+    network_mode: "host"
+    depends_on:
+      - "api-user"
+
+  api-group:
+    build:
+      context: ./api-group
+      dockerfile: Dockerfile.dev
+    ports:
+      - "8083:8083"
+    network_mode: "host"
+    depends_on:
+      - "api-contact"
+  
+  api-message:
+    build:
+      context: ./api-message
+      dockerfile: Dockerfile.dev
+    ports:
+      - "8084:8084"
+    network_mode: "host"
+    depends_on:
+      - "api-group"
