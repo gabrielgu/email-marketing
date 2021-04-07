@@ -1,0 +1,7 @@
+FROM maven:3.6.3-jdk-11
+
+COPY ./ /api-smtp-config
+
+WORKDIR /api-smtp-config
+
+CMD ["mvn", "spring-boot:run"]

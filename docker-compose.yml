@@ -8,7 +8,6 @@ services:
       dockerfile: Dockerfile.dev
     ports:
       - "8081:8081"
-    network_mode: "host"
 
   api-contact:
     build:
@@ -16,7 +15,6 @@ services:
       dockerfile: Dockerfile.dev
     ports:
       - "8082:8082"
-    network_mode: "host"
     depends_on:
       - "api-user"
 
@@ -26,9 +24,8 @@ services:
       dockerfile: Dockerfile.dev
     ports:
       - "8083:8083"
-    network_mode: "host"
     depends_on:
-      - "api-contact"
+      - "api-user"
   
   api-message:
     build:
@@ -36,6 +33,14 @@ services:
       dockerfile: Dockerfile.dev
     ports:
       - "8084:8084"
-    network_mode: "host"
     depends_on:
-      - "api-group"
+      - "api-user"
+  
+  api-smtp-config:
+    build:
+      context: ./api-smtp-config
+      dockerfile: Dockerfile.dev
+    ports:
+      - "8085:8085"
+    depends_on:
+      - "api-user"

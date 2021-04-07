@@ -1,30 +1,15 @@
-package com.apismtpconfig.model;
+package com.apismtpconfig.dto;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-@Entity
-@Table(name = "smtp_config")
-public class SmtpConfig {
+public class SmtpConfigDTO {
     
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
-    @Column(name = "host")
     private String host;
 
-    @Column(name = "username")
     private String username;
 
-    @Column(name = "password")
     private String password;
 
-    @Column(name = "id_user")
     private Integer idUser;
 
     public Integer getId() {
@@ -34,7 +19,7 @@ public class SmtpConfig {
     public void setId(Integer id) {
         this.id = id;
     }
-
+    
     public String getHost() {
         return host;
     }
@@ -66,5 +51,5 @@ public class SmtpConfig {
     public void setIdUser(Integer idUser) {
         this.idUser = idUser;
     }
-    
+
 }
