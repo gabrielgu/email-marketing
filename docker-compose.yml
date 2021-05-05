@@ -44,3 +44,9 @@ services:
       - "8085:8085"
     depends_on:
       - "api-user"
+
+  mongo:
+    image: mongo
+    ports:
+        - "27017:27017"
+    network_mode: bridge

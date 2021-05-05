@@ -1,0 +1,29 @@
+spring:
+  profiles:
+    active: development
+
+management:
+  endpoint:
+    health:
+      show-details: ALWAYS
+    
+server:
+  port: 8086
+  servlet:
+    context-path: /api-email-marketing
+      
+---
+
+spring:
+  config:
+    activate:
+      on-profile: development
+
+  data:
+    mongodb:
+      database: message_sended
+      port: 27017
+      host: localhost
+    option:
+      socket-timeout: 5000
+      connect-timeout: 5000
